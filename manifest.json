@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Split Mode Screenshot",
+  "version": "1.0",
+  "description": "Take light & dark mode screenshots and merge along a diagonal.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "downloads",
+    "<all_urls>"
+  ],
+  "icons": {
+    "48": "icons/icon-48.png",
+    "72": "icons/icon-72.png",
+    "96": "icons/icon-96.png",
+    "144": "icons/icon-144.png",
+    "192": "icons/icon-192.png"
+  },
+  "browser_action": {
+    "default_title": "Capture Split Screenshot",
+    "default_icon": {
+      "48": "icons/icon-48.png",
+      "72": "icons/icon-72.png",
+      "96": "icons/icon-96.png",
+      "144": "icons/icon-144.png",
+      "192": "icons/icon-192.png"
+    }
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
